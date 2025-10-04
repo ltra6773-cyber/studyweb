@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chi tiết Task</title>
+        <link rel="stylesheet" href="css/detail.css">
+        <script>
+            function addTask() { 
+                const name = document.getElementById("taskName").value.trim();
+                const content = document.getElementById("taskContent").value.trim();
+                const deadline = document.getElementById("taskDeadline").value;
+                const note = document.getElementById("taskNote").value.trim();
+            if (name === "" || content === "") { alert("Vui lòng nhập tên và nội dung!");
+            return; } 
+            const li = document.createElement("li"); li.innerText = name; } 
+        </script>  
+         
+    </head>
+    <body>
+        <h2 id="taskName"></h2>
+        <p><b>Nội dung:</b> <span id="taskContent"></span></p>
+        <p><b>Deadline:</b> <span id="taskDeadline"></span></p>
+        <p><b>Note:</b> <span id="taskNote"></span></p>
+        <button onclick="history.back()">⬅ Quay lại</button>
+    </body>
+</html>
+    
+
