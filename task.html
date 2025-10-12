@@ -4,25 +4,58 @@
         <meta charset="UTF-8">
         <title>Chi tiết Task</title>
         <link rel="stylesheet" href="css/detail.css">
-        <script>
-            function addTask() { 
-                const name = document.getElementById("taskName").value.trim();
-                const content = document.getElementById("taskContent").value.trim();
-                const deadline = document.getElementById("taskDeadline").value;
-                const note = document.getElementById("taskNote").value.trim();
-            if (name === "" || content === "") { alert("Vui lòng nhập tên và nội dung!");
-            return; } 
-            const li = document.createElement("li"); li.innerText = name; } 
-        </script>  
-         
-    </head>
-    <body>
-        <h2 id="taskName"></h2>
-        <p><b>Nội dung:</b> <span id="taskContent"></span></p>
-        <p><b>Deadline:</b> <span id="taskDeadline"></span></p>
-        <p><b>Note:</b> <span id="taskNote"></span></p>
-        <button onclick="history.back()">⬅ Quay lại</button>
-    </body>
+        <!DOCTYPE html>
+  <script>
+    function addTask() { 
+      const name = document.getElementById("taskInput").value.trim();
+      const content = document.getElementById("taskContent").value.trim();
+      const deadline = document.getElementById("taskDeadline").value;
+      const note = document.getElementById("taskNote").value.trim();
+
+      if (name === "" || content === "") { 
+        alert("Vui lòng nhập tên và nội dung!");
+        return; 
+      } 
+
+      // Hiển thị kết quả ra màn hình
+      document.getElementById("displayName").innerText = name;
+      document.getElementById("displayContent").innerText = content;
+      document.getElementById("displayDeadline").innerText = deadline || "(Không có)";
+      document.getElementById("displayNote").innerText = note || "(Không có)";
+    } 
+  </script>
+</head>
+
+<body>
+  <h2>📝 Thêm công việc</h2>
+
+  <p><b>Tên công việc:</b><br>
+    <input type="text" id="taskInput" placeholder="Nhập tên công việc">
+  </p>
+
+  <p><b>Nội dung:</b><br>
+    <textarea id="taskContent" placeholder="Nhập nội dung công việc"></textarea>
+  </p>
+
+  <p><b>Deadline:</b><br>
+    <input type="date" id="taskDeadline">
+  </p>
+
+  <p><b>Ghi chú:</b><br>
+    <input type="text" id="taskNote" placeholder="Ghi chú thêm (nếu có)">
+  </p>
+
+  <button onclick="addTask()">Thêm</button>
+  <button onclick="history.back()">⬅ Quay lại</button>
+
+  <hr>
+
+  <h3>Kết quả:</h3>
+  <p><b>Tên công việc:</b> <span id="displayName"></span></p>
+  <p><b>Nội dung:</b> <span id="displayContent"></span></p>
+  <p><b>Deadline:</b> <span id="displayDeadline"></span></p>
+  <p><b>Ghi chú:</b> <span id="displayNote"></span></p>
+</body>
 </html>
     
 
